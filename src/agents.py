@@ -44,7 +44,7 @@ def researcher_node(state: AgentState):
 def analyst_node(state: AgentState):
     raw_data = "\n\n".join(state["researcher_data"])
     prompt = f"You are a senior analyst. extract trends and numeric data.\n{raw_data}"
-    response = llm.ivoke(prompt)
+    response = llm.invoke(prompt)
     return {"messages": [response], "chart_data": []}
 
 def writer_node(state: AgentState):
